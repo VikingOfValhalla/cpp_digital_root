@@ -34,7 +34,6 @@ class additive_persistence
 	// input vector, return sum
 	unsigned long long int additive_summation(std::vector<unsigned long long int> vector_input)
 	{
-		// TODO HERE 2
 		// count talley for addition of integers
 		unsigned long long int sum = 0;
 
