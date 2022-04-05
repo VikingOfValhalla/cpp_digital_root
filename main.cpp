@@ -2,34 +2,27 @@
 #include <vector>
 #include <string>
 
-/*
-TODO: 
-- There is a bug with additive persistence count
-- There is a bug with digital root for larger numbers
-- Initial Input 393900588225 gives incorrect values, need to figure out why
-*/
-
 class additive_persistence
 {
 	// initializing variables
 	public:
-		int Initial_input;
+		unsigned long long int Initial_input;
 		std::string string_value;
-		std::vector <int> vector_of_digits;
-		int additive_persistence_count;
+		std::vector <unsigned long long int> vector_of_digits;
+		unsigned long long int additive_persistence_count;
 
 
 	// class constructor
-	additive_persistence(int initial_input)
+	additive_persistence(unsigned long long int initial_input)
 	{
 		Initial_input = initial_input;
 	};
 
 	// to count number of characters in string
 	// input string, return count
-	int count_string(std::string input_string)
+	unsigned long long int count_string(std::string input_string)
 	{
-		int count = 0;
+		unsigned long long int count = 0;
 		for (std::string::size_type x=0; x < input_string.length(); x++)
 		{
 			count = x+1;
@@ -39,13 +32,13 @@ class additive_persistence
 
 	// to add each integer
 	// input vector, return sum
-	int additive_summation(std::vector<int> vector_input)
+	unsigned long long int additive_summation(std::vector<unsigned long long int> vector_input)
 	{
 		// TODO HERE 2
 		// count talley for addition of integers
-		int sum = 0;
+		unsigned long long int sum = 0;
 
-		for (int x : vector_input)
+		for (unsigned long long int x : vector_input)
 		{
 			sum = sum + x;
 		}
@@ -60,7 +53,7 @@ class additive_persistence
 		{
 			// converts x into ASCII 
 			// -48 turns back into character equivilent
-			int num = x-48;
+			unsigned long long int num = x-48;
 
 			// putting each integer digit in vector for enumeration	
 			vector_of_digits.push_back(num);
@@ -72,22 +65,18 @@ class additive_persistence
 	{
 		// to count number of summations
 		additive_persistence_count = 0;
-		// additive_persistence_count = additive_persistence_count + 1;
 
 		// converting input to string to enumerate each digit
 		string_value = std::to_string(Initial_input);
 
 		// function call  to count how many digits
-		int count = count_string(string_value);
+		unsigned long long int count = count_string(string_value);
 
 		// converting string to int and adding to vector
 		convert_string_to_int(string_value);
 
 		// add each integer
-		int add_sum = additive_summation(vector_of_digits);
-
-		// printing out completed sum
-		std::cout << "Sum of Initial Input: " << add_sum << std::endl;
+		unsigned long long int add_sum = additive_summation(vector_of_digits);
 
 		// while count of integers is greater than 1, function calls for additive_summation
 		while (count > 1)
@@ -99,23 +88,32 @@ class additive_persistence
 			convert_string_to_int(string_value);
 			add_sum = additive_summation(vector_of_digits);
 		}
-		std::cout << "Additive Persistence: " << additive_persistence_count << std::endl;
-		std::cout << "Digital Root: " << add_sum << std::endl;
+		std::cout << " has an additive persistence of " << additive_persistence_count;
+		std::cout << " and a digital root of " << add_sum << std::endl;
 	};
 
 };
 
 int main ()
 {
+	// printing line break only for console formatting
+	std::cout << std::endl;
+
 	// initializing input variable, asking user for input
-	int x;
+	unsigned long long int x;
 	std::cout << "Initial Input: ";
 	std::cin >> x; 
 
+	//printing for final output
+	std::cout << x;
+	
 	// initializing class method and argument as input variable
 	additive_persistence additive_persistence_of(x);
 	
 	// calling function to calculate additive_persistence
 	additive_persistence_of.calculate_additive_persistence();
+
+	// printing line break only for console formatting
+	std::cout << std::endl;
 
 }
