@@ -5,13 +5,13 @@
 class additive_persistence
 {
 	// initializing variables
-	public:
+	private:
 		unsigned long long int Initial_input;
 		std::string string_value;
 		std::vector <unsigned long long int> vector_of_digits;
 		unsigned long long int additive_persistence_count;
 
-
+	public:
 	// class constructor
 	additive_persistence(unsigned long long int initial_input)
 	{
