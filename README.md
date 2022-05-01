@@ -1,6 +1,6 @@
 # Digital Root  
-__Compilation:__ `main.cpp`.  
-__Sourced:__ `http://rosettacode.org/wiki/Digital_root`.  
+__Compilation:__ `main.cpp`  
+__Sourced:__ `http://rosettacode.org/wiki/Digital_root`  
 __Code Author:__ `VikingOfValhalla`    
 __Purpose:__ To calculate the digital root and additive persistence based on user input.  
 
