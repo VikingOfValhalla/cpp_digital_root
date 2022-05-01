@@ -1,4 +1,4 @@
-# Digital Root
+# Digital Root #
 __Compilation:__ `main.cpp`.
 __Sourced:__ `http://rosettacode.org/wiki/Digital_root`.
 __Code Author:__ `VikingOfValhalla` 
