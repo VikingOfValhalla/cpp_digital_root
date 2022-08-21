@@ -27,11 +27,6 @@ void append_to_vector(std::vector<int> &vector_input, const long long int select
 }
 
 
-int size_of_vector(std::vector<int> &vector_input) {
-    return vector_input.size();
-}
-
-
 long long int sum_of_elements(std::vector<int> &vector_input) {
     long long int summation = 0;
     for (int it = 0; it < vector_input.size(); it++) {
@@ -63,11 +58,14 @@ int main ()
         append_to_vector(n_values, digital_root);
     }
 
+
     std::cout << user_input << " has an additive persistence of: ";
     std::cout << additive_persistence << std::endl; // print additive persistence
 
+
     std::cout << "and a digital root of: ";
     std::cout << digital_root  << std::endl;        // print digital root
+
     
     return 0;
 }
