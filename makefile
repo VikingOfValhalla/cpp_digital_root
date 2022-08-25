@@ -1,5 +1,5 @@
 IDIR = .
-CC=g++.exe
+CC=g++
 CFLAGS=-I $(IDIR)
 OUTPUT=main
 
